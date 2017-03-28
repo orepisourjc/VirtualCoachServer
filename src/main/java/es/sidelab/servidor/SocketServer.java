@@ -24,7 +24,7 @@ public class SocketServer {
 		SpringApplication.run(SocketServer.class, args);
 		System.out.println("Servidor arrancado");
 		Properties props = new Properties();
-		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.host", "smtp.outlook.com");
 		props.put("mail.smtp.socketFactory.port", "465");
 		props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 		props.put("mail.smtp.auth", "true");
@@ -45,10 +45,10 @@ public class SocketServer {
 				BufferedReader leerCliente = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 				String linea = leerCliente.readLine();
 				Message message = new MimeMessage(session);
-				message.setFrom(new InternetAddress("salewebdad@gmail.com"));
+				message.setFrom(new InternetAddress("virtualCoach@outlook.es"));
 				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(linea));
-				message.setSubject("Confirmacion SaleWeb");
-				message.setText("Gracias por comprar en SaleWeb");
+				message.setSubject("Confirmacion Registro VirtualCoach");
+				message.setText("Gracias por registararse en VirtualCoach");
 
 				Transport.send(message);
 
