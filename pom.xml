@@ -43,7 +43,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>es.sidelab.Servidor.Application</mainClass>
+							<mainClass>es.sidelab.servidor.SocketServer</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

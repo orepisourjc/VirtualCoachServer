@@ -32,7 +32,7 @@ public class SocketServer {
 
 		Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
 				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication("virtualcoach@gmail.com","urjc1995");
+					return new PasswordAuthentication("vitualcoach@gmail.com","urjc1995");
 				}
 		});
 		
@@ -44,11 +44,12 @@ public class SocketServer {
 				Socket socket = serverSocket.accept();
 				BufferedReader leerCliente = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 				String linea = leerCliente.readLine();
+				System.out.println(linea);
 				Message message = new MimeMessage(session);
-				message.setFrom(new InternetAddress("virtualcoach@gmail.com"));
+				message.setFrom(new InternetAddress("vitualcoach@gmail.com"));
 				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(linea));
 				message.setSubject("Confirmacion VirtualCoach");
-				message.setText("Gracias por registrarte en VirtualCoach");
+				message.setText("Gracias por registrarte en VirtualCoach, dentro de poco podras empezar a registrar marcas y ejercicios.");
 
 				Transport.send(message);
 
